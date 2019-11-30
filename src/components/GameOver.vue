@@ -1,6 +1,8 @@
 <template>
   <div class="outer">
-    <h1 v-if="playerWon">WIN</h1>
+    <div v-if="playerWon">
+      <p>You've won!</p>
+    </div>
     <div class="solution" v-else>
       <p>You've lost</p>
       <p>The right combination was</p>
