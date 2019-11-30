@@ -1,7 +1,7 @@
 <template>
   <div class="outer">
     <div v-if="playerWon">
-      <p>You've won!</p>
+      <p>You've won in {{ turnsToWin }} tries!</p>
     </div>
     <div class="solution" v-else>
       <p>You've lost</p>
@@ -24,6 +24,7 @@
 </template>
 <script>
 import GameOverRetry from "./GameOverRetry.vue";
+import { NUMBER_OF_ROWS } from "../constants";
 
 export default {
   name: "GameOver",
@@ -40,7 +41,10 @@ export default {
   computed: {
     correctCombination: function() {
       return this.$store.state.correctCombination;
-    }
+    },
+    turnsToWin: function() {
+      return NUMBER_OF_ROWS - this.$store.state.currentRow;
+    },
   }
 };
 </script>
