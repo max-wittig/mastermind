@@ -6,6 +6,7 @@
     <turn-button />
     <game-over :playerWon="isGameWon()" v-show="isGameOver()" />
     <!--<result-log />-->
+    <bottom-bar />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import ColorBar from "./components/ColorBar.vue";
 import TurnButton from "./components/TurnButton.vue";
 import GameOver from "./components/GameOver.vue";
 //import ResultLog from "./components/ResultLog.vue";
+import BottomBar from "./components/BottomBar.vue";
 import { NUMBER_OF_CELLS } from "./constants";
 
 export default {
@@ -23,7 +25,8 @@ export default {
     Grid,
     ColorBar,
     TurnButton,
-    GameOver
+    GameOver,
+    BottomBar,
     //ResultLog,
   },
   data() {
